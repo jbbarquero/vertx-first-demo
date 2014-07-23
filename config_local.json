@@ -1,0 +1,41 @@
+{
+	"mongodb": {
+		"addresses": [
+			{
+				"host": "127.0.0.1",
+				"port": 27017
+			}
+		],
+		"dbname": "mdm",
+		"username": null,
+		"password": null,
+		"poolsize": 10,
+		"nearest": true
+	},
+	
+	"vertx": {
+		"secure": false,
+		"jksFile": "/users/lacebes/workspace/registrounico/es.eci.mdm/server-keystore.jks",
+		"jksPassword": "123456",
+		"webFolder": "/users/lacebes/Documents/Presentacion/elvertx/Ejemplo/webroot",
+		"testingEnabled": true,
+		"host": "*",
+		"port": 8080
+	},
+
+	"modules": [
+			
+		
+		{
+			"class": "es.eci.ejemplo.WebService",
+			"worker": false
+		},
+		{
+			"class": "es.eci.ejemplo.EciCompanyService",
+			"worker": true,
+			"multiThreaded": false,
+			"instances": 1
+		}
+		
+	]
+}
